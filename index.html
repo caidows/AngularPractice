@@ -1,0 +1,78 @@
+<html ng-app>
+    <head>	
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>英超截图 - 风云直播</title>
+        <link rel="stylesheet" type="text/css" href="css/flat.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                background-color: #3C72C4;
+            }
+            html{
+            	background-color: #3C72C4;
+            }
+            ul{
+                position: relative;
+                overflow: hidden;
+                height: 850px;
+                width: 700px;
+                margin-top:20px;
+            }
+            li {
+                position: absolute; 
+                left: 0px; 
+                top: 0px; 
+                -webkit-transform: translate3d(0px, 0px, 0px);
+                margin:0 20px 25px 0 !important;
+            }
+            .li-content {
+                width: 200px;
+                height: 250px;
+                overflow-y: auto;
+            }
+            .wpb-portfolio-thumbnail.li-pic {
+                height: auto;
+            }
+            li .wpb-portfolio-details h3{
+                font-size: 20px;
+                line-height: 22px;                
+            }
+            .wpb-portfolio-item .wpb-portfolio-thumbnail .wpb-portfolio-overlay{
+            	background: rgba(99, 192, 255, 0.6);
+            }
+            .wpb-portfolio-details{
+            	padding: 0 15px 10px;
+            }
+            li img{
+            	width:200px;
+            	height: 150px;
+            }
+        </style>
+    </head>	
+    <body ng-controller="MainController">
+        <div>
+            <ul class="wpb-portfolio-list isotope my-ul">
+                <li class="wpb-portfolio-item web-design li-content" ng-repeat="channel in channels">
+                    <div class="wpb-portfolio-thumbnail li-pic">
+                        <a href="#">
+                            <img src="http://www.fengyunzhibo.com/service/getSnapshot.do?cid={{channel.cid}}&jump=1" alt="Portfolio Item">
+                            <div class="wpb-portfolio-overlay">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wpb-portfolio-details">
+                        <h3>{{channel.name}}</h3>
+                        <p>{{channel.text}}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <script src="js/angular.min.js"></script>
+        <script src="js/controller.js"></script>
+        <script language="javascript" type="text/javascript" src="http://4.fyimg.kukuplay.com/common/scripts/jquery.js"></script>
+        <script language="javascript" type="text/javascript" src="js/fat.js"></script>
+    </body>
+</html>
